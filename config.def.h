@@ -93,9 +93,9 @@ static int vbellmode = 1;
  * - position: relative to window width/height (0 and 1 are at the edges) */
 static int vbellcolor = 3;
 static int vbellcolor_outline = 1;
-static float vbellradius = 0.03;
-static float vbellx = 1;
-static float vbelly = 0;
+static float vbellradius = 0.005;
+static float vbellx = 0.99;
+static float vbelly = 0.01;
 
 /* default TERM value */
 char *termname = "st-256color";
