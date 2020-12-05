@@ -142,8 +142,8 @@ unsigned int defaultbg = 256;
 unsigned int defaultfg = 257;
 unsigned int bgfocused = 258;
 unsigned int bgunfocused = 259;
-static unsigned int defaultcs = 260;
-static unsigned int defaultrcs = 261;
+unsigned int defaultcs = 260;
+unsigned int defaultrcs = 261;
 
 unsigned int const currentBg = 8, buffSize = 2048;
 /// [Vim Browse] Colors for search results currently on screen.
