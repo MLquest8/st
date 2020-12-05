@@ -269,7 +269,6 @@ static char *opt_title = NULL;
 static int focused = 0;
 
 static int oldbutton = 3; /* button event on startup: 3 = release */
-static int bellon = 0;    /* visual bell status */
 static int cursorblinks = 0;
 
 void
@@ -1810,8 +1809,6 @@ xbell(void)
 		xseturgency(1);
 	if (bellvolume)
 		XkbBell(xw.dpy, xw.win, bellvolume, (Atom)NULL);
-	if (!bellon) /* turn visual bell on */
-		bellon = 1;
 }
 
 void
@@ -2082,13 +2079,7 @@ run(void)
 			}
 		}
 
-		if (bellon) {
-			bellon++;
-			bellon %= 3;
-			MODBIT(win.mode, !IS_SET(MODE_REVERSE), MODE_REVERSE);
-			redraw();
-		}
-		else draw();
+		draw();
 		XFlush(xw.dpy);
 		drawing = 0;
 	}
